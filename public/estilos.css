@@ -1,0 +1,181 @@
+/* === CONFIGURACIÓN GENERAL === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Fuente simple y legible */
+    background-color: #1a1a2e; /* Fondo azul muy oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* === BARRA DE NAVEGACIÓN (NAVBAR) === */
+.navbar {
+    background-color: #16213e; /* Un poco más claro que el fondo */
+    padding: 15px 40px;
+    display: flex; /* Pone el logo y los enlaces en la misma linea */
+    justify-content: space-between; /* Separa los elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    border-bottom: 2px solid #0f3460; /* Linea azul decorativa abajo */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4db5ff; /* Azul brillante */
+    text-decoration: none; /* Quita el subrayado */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.container {
+    max-width: 1000px; /* Ancho máximo de la web */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* === DISEÑO DE LA CUADRÍCULA (GRID) === */
+.grid-cazas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no caben */
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centra las tarjetas */
+}
+
+/* === TARJETA DEL CAZA === */
+.tarjeta {
+    background-color: #16213e;
+    border: 1px solid #0f3460;
+    border-radius: 8px; /* Bordes redondeados */
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.2s; /* Suaviza la animación */
+}
+
+.tarjeta:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    cursor: pointer;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Recorta la imagen para que no se deforme */
+}
+
+.info {
+    padding: 15px;
+    text-align: center;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #0f3460;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: #4db5ff;
+    color: black;
+}
+
+/* === ESTILOS PÁGINA DE DETALLE === */
+.detalle-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* === ESTILOS AUTOCOMPLETADO (AÑADIDO PARA INDEX) === */
+.search-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 240px; /* Muestra aproximadamente 3-4 aviones (60px cada uno) */
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    
+    background-color: #1e293b; /* slate-800, completamente opaco */
+    
+    /* CAMBIO CLAVE: Quitamos el borde del dropdown para que no se vea la línea */
+    border: 1px solid #475569; /* Este borde ahora es solo para el input */ 
+    
+    /* CAMBIO CLAVE: Ajustamos el margen superior para que se "pegue" al input sin dejar hueco */
+    margin-top: 1px; /* Para que el borde superior del dropdown se solape con el borde inferior del input */
+
+    border-radius: 0 0 8px 8px; /* Solo redondeamos abajo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+    /* Slider vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+}
+
+/* Estilos del scrollbar vertical para navegadores WebKit */
+.search-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-dropdown::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.2s;
+    text-decoration: none; /* Asegura que el enlace no se subraye */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 60px;
+    flex-shrink: 0;
+    color: #d1d5db; /* gray-300 */
+    border-bottom: 1px solid #334155;
+}
+
+.suggestion-item:hover {
+    background-color: #334155; /* slate-700 */
+    color: white;
+    transform: scale(1.02);
+}
