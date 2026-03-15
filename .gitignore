@@ -1,0 +1,48 @@
+# === SEGURIDAD ===
+# No subir credenciales ni configuración sensible
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === DEPENDENCIAS ===
+# No subir la carpeta de librerías (se regenera con npm install)
+node_modules/
+/jspm_packages/
+
+# === LOGS Y DEPURACIÓN ===
+# Registros de errores de npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Logs del sistema y de la aplicación
+logs
+*.log
+npm-debug.log*
+user-extensions.js
+
+# === ARCHIVOS DEL SISTEMA ===
+# Archivos basura de Windows y macOS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# === IDEs Y EDITORES ===
+# Configuración específica de editores (opcional pero recomendado)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# === BACKUPS Y TEMPORALES ===
+*.bak
+*.tmp
+*.temp
